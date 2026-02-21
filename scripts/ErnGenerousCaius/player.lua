@@ -24,8 +24,6 @@ local core     = require('openmw.core')
 local pself    = require("openmw.self")
 
 local function onQuestUpdate(questId, stage)
-    print(tostring(questId) .. " = " .. tostring(stage))
-    print(tostring(pself.cell.id))
     if questId == "a2_4_milogone" and stage == 1 then
         print(tostring(questId) .. " = " .. tostring(stage))
         -- caius gave you his house
