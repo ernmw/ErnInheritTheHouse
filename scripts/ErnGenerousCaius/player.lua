@@ -45,6 +45,13 @@ local function onQuestUpdate(questId, stage)
             player = pself,
             cellID = "seyda neen, vodunius nuccius' house",
         })
+    elseif questId == "pc_m1_mg_cha3" and (stage == 70 or stage == 80) then
+        print(tostring(questId) .. " = " .. tostring(stage))
+        -- ugenring leaves
+        core.sendGlobalEvent(MOD_NAME .. "onVacate", {
+            player = pself,
+            cellID = "charach, ugenring's house",
+        })
     end
 end
 
