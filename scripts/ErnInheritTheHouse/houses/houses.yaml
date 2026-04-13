@@ -17,3 +17,6 @@ houses:
   - quest: pc_m1_mg_cha3
     stage: 80
     cell: charach, ugenring's house
+  - quest: tr_m3_tg_moranie2
+    stage: 110
+    cell: old ebonheart, otrebus delagia's house
