@@ -1,4 +1,4 @@
-# Inherit the House (aka Generous Caius)
+# Inherit the House
 
 OpenMW mod that removes ownership of items, containers, and beds when these NPCs abandon them:
 - Caius Cosades (Balmora)
@@ -10,3 +10,7 @@ Compatible with everything since it only uses Lua.
 This won't remove ownership if you've already progressed past the checkpoints in the relevant quests.
 
 ![example](inherit-the-house.png)
+
+## Adding More Houses
+
+Add a yaml file to `scripts/ErnInheritTheHouse/houses/` in the same format as `houses.yaml`. The mod will merge all the data together.
