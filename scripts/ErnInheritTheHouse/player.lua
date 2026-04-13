@@ -22,36 +22,17 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 local MOD_NAME = require("scripts.ErnInheritTheHouse.ns")
 local core     = require('openmw.core')
 local pself    = require("openmw.self")
+local houses   = require("scripts.ErnInheritTheHouse.houses.load")
 
 local function onQuestUpdate(questId, stage)
-    if questId == "a2_4_milogone" and stage == 1 then
-        print(tostring(questId) .. " = " .. tostring(stage))
-        -- caius gave you his house
-        core.sendGlobalEvent(MOD_NAME .. "onVacate", {
-            player = pself,
-            cellID = "balmora, caius cosades' house",
-        })
-    elseif questId == "mg_killnecro2" and stage == 50 then
-        print(tostring(questId) .. " = " .. tostring(stage))
-        -- tashpi ashibael goes into hiding
-        core.sendGlobalEvent(MOD_NAME .. "onVacate", {
-            player = pself,
-            cellID = "maar gan, tashpi ashibael's hut",
-        })
-    elseif questId == "ms_nuccius" and stage == 100 then
-        print(tostring(questId) .. " = " .. tostring(stage))
-        -- vodunius leaves vvardenfell
-        core.sendGlobalEvent(MOD_NAME .. "onVacate", {
-            player = pself,
-            cellID = "seyda neen, vodunius nuccius' house",
-        })
-    elseif questId == "pc_m1_mg_cha3" and (stage == 70 or stage == 80) then
-        print(tostring(questId) .. " = " .. tostring(stage))
-        -- ugenring leaves
-        core.sendGlobalEvent(MOD_NAME .. "onVacate", {
-            player = pself,
-            cellID = "charach, ugenring's house",
-        })
+    for _, inheritInfo in ipairs(houses) do
+        if questId == inheritInfo.quest and stage == inheritInfo.stage then
+            core.sendGlobalEvent(MOD_NAME .. "onVacate", {
+                player = pself,
+                cellID = inheritInfo.cell,
+            })
+            break
+        end
     end
 end
 

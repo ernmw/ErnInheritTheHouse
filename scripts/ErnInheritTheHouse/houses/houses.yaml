@@ -1,0 +1,19 @@
+# Quest rewards for heroes.
+# Test with setJournalIndex ms_nuccius 100
+
+houses:
+  - quest: a2_4_milogone
+    stage: 1
+    cell: balmora, caius cosades' house
+  - quest: mg_killnecro2
+    stage: 50
+    cell: maar gan, tashpi ashibael's hut
+  - quest: ms_nuccius
+    stage: 100
+    cell: seyda neen, vodunius nuccius' house
+  - quest: pc_m1_mg_cha3
+    stage: 70
+    cell: charach, ugenring's house
+  - quest: pc_m1_mg_cha3
+    stage: 80
+    cell: charach, ugenring's house

@@ -43,6 +43,10 @@ local function removeOwner(obj)
             end
         end
     end
+    if types.Lockable.objectIsInstance(obj) then
+        types.Lockable.unlock(obj)
+        types.Lockable.setTrapSpell(obj)
+    end
 end
 
 local function onVacate(data)
